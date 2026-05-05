@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // --- Custom Cursor ---
     const cursorDot = document.getElementById('cursor-dot');
     const cursorGlow = document.getElementById('cursor-glow');
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
-        
+
         // Immediate update for dot for responsiveness
         cursorDot.style.left = `${mouseX}px`;
         cursorDot.style.top = `${mouseY}px`;
@@ -25,10 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Easing factor
         glowX += (mouseX - glowX) * 0.15;
         glowY += (mouseY - glowY) * 0.15;
-        
+
         cursorGlow.style.left = `${glowX}px`;
         cursorGlow.style.top = `${glowY}px`;
-        
+
         requestAnimationFrame(animateCursor);
     }
     animateCursor();
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cursorDot.style.opacity = '0';
         cursorGlow.style.opacity = '0';
     });
-    
+
     document.addEventListener('mouseenter', () => {
         cursorDot.style.opacity = '1';
         cursorGlow.style.opacity = '1';
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Scroll Animations (Intersection Observer) ---
     const fadeElements = document.querySelectorAll('.fade-in, .grow-in');
-    
+
     const fadeObserverOptions = {
         root: null,
         rootMargin: '0px',
@@ -68,14 +68,14 @@ document.addEventListener('DOMContentLoaded', () => {
         fadeObserver.observe(el);
     });
 
-    
+
     // --- Smooth Scrolling for Anchor Links ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
+
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 targetElement.scrollIntoView({
@@ -85,6 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // Vanilla Tilt is initialized via data-tilt attributes in HTML automatically
+  // Vanilla Tilt is initialized via data-tilt attributes in HTML automatically
 });
+
+
+
